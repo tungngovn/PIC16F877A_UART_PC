@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>66b1a0b18b.png</file>
+        <file>DHT11-800x800.jpg</file>
+        <file>PIC-500x500.png</file>
+        <file>medium_temperature-512.png</file>
+    </qresource>
+</RCC>
