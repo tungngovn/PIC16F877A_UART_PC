@@ -67,6 +67,7 @@ void MainWindow::plotHumid()
 {
     ui->plotHumid->graph(0)->setData(hv_x,hv_y);
     ui->plotHumid->graph(0)->rescaleAxes();
+    ui->plotHumid->setInteractions(QCP::iRangeDrag | QCP::iRangeZoom | QCP::iSelectPlottables);
     ui->plotHumid->replot();
     ui->plotHumid->update();
 }
@@ -82,9 +83,11 @@ void MainWindow::serialport_read()
         break;
     case 1:
         t.append(a);
+        if(t.toInt() < 50){
         ui->progressBar_2->setValue(t.toInt());
         addPointTemp(double(times), t.toDouble());
         plotTemp();
+        }
         t.clear();
         break;
     case 2:
